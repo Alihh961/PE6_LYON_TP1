@@ -8,24 +8,23 @@ FONCTION memeDate(annee1 , mois1 , jour1, annee2 , mois2 , jour2) :boolean
         SI annee1 = annee2
         SI mois1 = mois2 
         SI jour1 = jour2
-        retourner PAREIL
+        retourner VRAI
     FIN
 
 FONCTION apresDATE(annee1 , mois1 , jour1, annee2 , mois2 , jour2) :boolean
     DEBUT
         SI ( annee1 > annee2)
-        OU ( annee1 = annee2
-        ET mois1 > mois2)
-        OU ( annee1 = annee2 
-        ET mois1 = mois2 
-        ET jour1 > jour2)
-        Retourne APRES
+        OU ( annee1 = annee2 ET mois1 > mois2)
+        OU ( annee1 = annee2 ET mois1 = mois2 ET jour1 > jour2)
+        Retourne VRAI
         FIN SI
+        Retourne Faux
     FIN
 
 
 
-Fonction estAvant(var annee1, var mois1, var jour1, var 
+...
+FONCTION estAvant(var annee1, var mois1, var jour1, var 
 annee2, var mois2, var jour2) : entier
 DEBUT
     Declare AVANT <- -1
@@ -34,11 +33,14 @@ DEBUT
 
     #Meme Dates
     memeDate(annee1 , mois1 , jour1, annee2 , mois2 , jour2)
+    Retourne PAREIL
 
     #Apres Date2
-    Fonction estAvant(var annee1, var mois1, var jour1, var annee2, var mois2, var jour2) : entier
+    Fonction apresDate(var annee1, var mois1, var jour1, var annee2, var mois2, var jour2)
+    Retourne APRES
 
-
+    ELSE
+    Retourne AVANT
 
     
    
